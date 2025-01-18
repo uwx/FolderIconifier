@@ -27,6 +27,9 @@
       <None Update="Icons\Colored Folders (Windows 10)\*.ico">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
+      <None Update="CREDZ.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
 <!--      <None Update="Icons\Emoji\*.ico">-->
 <!--        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
 <!--      </None>-->
