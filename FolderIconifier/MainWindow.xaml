@@ -1,0 +1,60 @@
+﻿<Window x:Class="FolderIconifier.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FolderIconifier"
+        mc:Ignorable="d"
+        Title="Folder Iconifier" Height="450" Width="800">
+    <Grid>
+        <DockPanel>
+            <TextBox Name="FilterText" DockPanel.Dock="Top" TextChanged="FilterText_OnTextChanged"></TextBox>
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+                <Button Click="Install_OnClick">Install to Registry</Button>
+                <Button Click="Uninstall_OnClick">Uninstall from Registry</Button>
+            </StackPanel>
+            <ListView Name="IconList"
+                      ItemsSource="{Binding FolderIcons}"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      SelectedItem="{Binding SelectedFolderIcon}"
+                      d:DataContext="{d:DesignInstance local:MainWindowViewModel}">
+                <ListView.Resources>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <EventSetter Event="MouseDoubleClick" Handler="HandleDoubleClick" />
+                    </Style>
+                </ListView.Resources>
+                
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="64" Width="64" Margin="5">
+                            <StackPanel HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                                <DockPanel>
+                                    <TextBlock
+                                        DockPanel.Dock="Bottom"
+                                        HorizontalAlignment="Center"
+                                        TextAlignment="Center"
+                                        Text="{Binding Name}"
+                                        TextWrapping="WrapWithOverflow"
+                                        />
+                                    <Image
+                                        RenderOptions.BitmapScalingMode="Fant"
+
+                                        Height="32"
+                                        Width="32"
+                                        Source="{Binding ImageSource}"
+                                        />
+                                </DockPanel>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </DockPanel>
+    </Grid>
+</Window>
