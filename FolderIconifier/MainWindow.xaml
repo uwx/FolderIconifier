@@ -10,8 +10,8 @@
         <DockPanel>
             <TextBox Name="FilterText" DockPanel.Dock="Top" TextChanged="FilterText_OnTextChanged"></TextBox>
             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
-                <Button Click="Install_OnClick">Install to Registry</Button>
-                <Button Click="Uninstall_OnClick">Uninstall from Registry</Button>
+                <Button Padding="7,3" Click="Install_OnClick">Install to Registry</Button>
+                <Button Padding="7,3" Click="Uninstall_OnClick">Uninstall from Registry</Button>
             </StackPanel>
             <ListView Name="IconList"
                       ItemsSource="{Binding FolderIcons}"

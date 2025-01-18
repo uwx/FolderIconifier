@@ -7,8 +7,10 @@ using System.Text.Json.Serialization;
 
 Console.WriteLine("Hello, World!");
 
+// hardcoded! sad!
 const string emojiRoot = @"G:\GitHub\Csharp\FolderIconifier\FolderIconifier\Icons\Emoji";
 
+// also hardcoded! sad!
 foreach (var emojiDir in Directory.GetDirectories(@"G:\GitHub\Misc\fluentui-emoji\assets"))
 {
     if (!Directory.Exists(Path.Combine(emojiDir, "3D")))

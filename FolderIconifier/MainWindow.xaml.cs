@@ -67,6 +67,7 @@ public partial class MainWindow : Window
     
     private void Colorize(string folder, FolderIcon folderIcon)
     {
+        // https://stackoverflow.com/a/78220597
         var folderSettings = new Shell32.SHFOLDERCUSTOMSETTINGS
         {
             dwMask = Shell32.FOLDERCUSTOMSETTINGSMASK.FCSM_ICONFILE,
